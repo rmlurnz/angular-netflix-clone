@@ -1,14 +1,30 @@
 <div class="relative">
   @if(dataObs | async; as movies){ @for(movie of movies; track movie.id){
   @if($index === slideIndex){
-  <div>
+  <div class="h-5/6">
     <img
-      class="movie-poster w-full h-full object-cover border-0 z-9"
+      [ngClass]="
+        isMobile()
+          ? ' border-0 z-9'
+          : 'movie-poster w-full h-full object-cover border-0 z-9'
+      "
       [src]="imagesBaseUrl + 'w1280' + movie.backdrop_path"
       [alt]="movie.title"
     />
-    <div class="absolute bottom-[20%] p-10 text-white w-1/2">
-      <h2 class="text-ellipsis text-5xl font-semibold">
+    <div
+      [ngClass]="
+        isMobile()
+          ? 'absolute bottom-[10%] p-5 text-white text-xs'
+          : 'absolute bottom-[20%] p-10 text-white w-1/2'
+      "
+    >
+      <h2
+        [ngClass]="
+          isMobile()
+            ? 'text-ellipsis text-3xl font-semibold'
+            : 'text-ellipsis text-5xl font-semibold'
+        "
+      >
         {{ movie.title }}
       </h2>
       <p class="py-4">{{ movie.overview }}</p>
@@ -22,20 +38,20 @@
       </p>
     </div>
     <div
-      class="absolute top-0 w-full h-full md:flex p-5 items-center justify-between"
+      [ngClass]="
+        isMobile()
+          ? 'absolute top-0 w-full h-full md:flex p-5 items-center justify-between'
+          : 'absolute top-0 w-full h-full md:flex p-5 items-center justify-between'
+      "
     >
       <button
         (click)="slideLeft()"
         class="bg-white p-0 rounded-full w-7 h-7 text-xl z-10 text-black"
-      >
-        <
-      </button>
+      ></button>
       <button
         (click)="slideRight()"
         class="bg-white p-0 w-7 h-7 rounded-full text-xl z-10 text-black"
-      >
-        >
-      </button>
+      ></button>
     </div>
   </div>
   } } }

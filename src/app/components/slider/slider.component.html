@@ -3,15 +3,15 @@
   @if($index === slideIndex){
   <div>
     <img
-      class="w-full h-full object-cover border-0 z-9"
+      class="movie-poster w-full h-full object-cover border-0 z-9"
       [src]="imagesBaseUrl + 'w1280' + movie.backdrop_path"
       [alt]="movie.title"
     />
-    <div class="absolute bottom-[20%] p-10 text-white">
-      <h2 class="text-ellipsis text-2xl font-semibold">
+    <div class="absolute bottom-[20%] p-10 text-white w-1/2">
+      <h2 class="text-ellipsis text-5xl font-semibold">
         {{ movie.title }}
       </h2>
-      <p>{{ movie.overview }}</p>
+      <p class="py-4">{{ movie.overview }}</p>
       <p>
         Rating: {{ movie.vote_average }} | Popularity:
         {{ movie.popularity }}

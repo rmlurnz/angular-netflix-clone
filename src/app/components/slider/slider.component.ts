@@ -22,7 +22,7 @@ export class SliderComponent {
       } else {
         this.slideIndex = 0;
       }
-    }, 5000);
+    }, 7500);
   }
 
   slideLeft() {

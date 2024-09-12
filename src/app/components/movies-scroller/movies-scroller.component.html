@@ -1,18 +1,16 @@
 <div class="relative">
   <div
     #content
-    class="mt-10 mx-20 grid grid-cols-[repeat(auto-fit,230px)] grid-flow-col gap-6 overflow-hidden overflow-x-hidden relative z-10 scroll-smooth transition-all scrolbar-none"
+    class="mt-10 mx-20 grid grid-cols-[repeat(auto-fit,230px)] grid-flow-col gap-6 overflow-hidden overflow-x-hidden relative z-10 scroll-smooth transition-all scrollbar-none"
   >
-    @if(dataObs | async; as popularMovies) { @for(movie of popularMovies; track
-    movie.id){
+    @if (dataObs | async; as popularMovies) { @for (movie of popularMovies;
+    track movie.id){
 
     <app-movie [movie]="movie" />
     } }
   </div>
 
-  <div
-    class="absolute top-0 hidden lg:flex justify-between w-full h-full items-center"
-  >
+  <div class="absolute top-0 flex justify-between w-full h-full items-center">
     <button
       (click)="scrollLeft()"
       class="bg-white p-1 text-black rounded-full ml-3 z-40"

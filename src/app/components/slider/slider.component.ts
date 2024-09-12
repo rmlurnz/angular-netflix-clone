@@ -1,14 +1,14 @@
 import { Component, Input, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie } from '../../models/movie';
-import { AsyncPipe, DatePipe, NgClass } from '@angular/common';
+import { AsyncPipe, DatePipe, NgClass, NgStyle } from '@angular/common';
 import { MediaQueryService } from '../../services/media-query.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, NgClass],
+  imports: [AsyncPipe, DatePipe, NgClass, NgStyle],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.css',
 })

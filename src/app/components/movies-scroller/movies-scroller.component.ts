@@ -18,14 +18,14 @@ export class MoviesScrollerComponent {
 
   public scrollRight(): void {
     this.content.nativeElement.scrollTo({
-      left: this.content.nativeElement.scrollLeft + 1000,
+      left: this.content.nativeElement.scrollLeft + 150,
       behavior: 'smooth',
     });
   }
 
   public scrollLeft(): void {
     this.content.nativeElement.scrollTo({
-      left: this.content.nativeElement.scrollLeft - 1000,
+      left: this.content.nativeElement.scrollLeft - 150,
       behavior: 'smooth',
     });
   }
